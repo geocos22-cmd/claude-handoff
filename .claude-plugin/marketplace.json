@@ -11,7 +11,7 @@
       "name": "handoff",
       "source": {
         "source": "github",
-        "repo": "willseltzer/claude-handoff"
+        "repo": "geocos22-cmd/claude-handoff"
       },
       "description": "Hand off context to any AI coding agent",
       "version": "1.0.0"

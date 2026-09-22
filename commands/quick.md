@@ -18,4 +18,6 @@ Output this exact format (fill in the brackets):
 **Watch out**: [one key warning, or "Nothing special"]
 ```
 
-That's it. No extras. Save to `HANDOFF.md` or the path in `$ARGUMENTS`.
+That's it. No extras.
+
+Save it the never-overwrite way: get today's date via `date +%F`; if `HANDOFF.md` exists in the working directory (or `$ARGUMENTS` path), copy it to `HANDOFF_<today>.md` (suffixed `_2`, `_3`, ... if taken) before writing anything; write this handoff to `HANDOFF_<today>.md` (same suffixing rule); then copy that file over `HANDOFF.md` so it mirrors the newest save. Never overwrite or delete an existing `HANDOFF_*.md`.

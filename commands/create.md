@@ -138,4 +138,12 @@ Example:
 - If there's a blocker, say so prominently
 - Omit empty sections (except Failed Approaches - say "None" if truly nothing failed)
 
-Save to `HANDOFF.md` in the working directory. If `$ARGUMENTS` specifies a path, use that instead.
+## Save (never overwrite a prior handoff)
+
+Determine today's date with `date +%F` (YYYY-MM-DD). Use the working directory, or the path in `$ARGUMENTS` if given, as the base directory for all of the below.
+
+1. **Rescue an existing `HANDOFF.md`.** If `HANDOFF.md` already exists in the base directory, copy it to `HANDOFF_<today>.md` first (append `_2`, `_3`, ... if a file with that name already exists), so no prior handoff is ever lost.
+2. **Write the new handoff.** Save the document you just wrote to `HANDOFF_<today>.md` (append `_2`, `_3`, ... if today's file — or `_N` file — is already taken; never overwrite an existing dated file).
+3. **Update the pointer.** Copy that new dated file over `HANDOFF.md`, so `HANDOFF.md` always mirrors the newest handoff and stays the single entry point for the `handoff` skill and `/handoff:resume`.
+
+Never delete or overwrite an existing `HANDOFF_*.md` file. Nothing is ever destroyed by this command.
