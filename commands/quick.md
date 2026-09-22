@@ -20,4 +20,4 @@ Output this exact format (fill in the brackets):
 
 That's it. No extras.
 
-Save it the never-overwrite way: get today's date via `date +%F`; if `HANDOFF.md` exists in the working directory (or `$ARGUMENTS` path), copy it to `HANDOFF_<today>.md` (suffixed `_2`, `_3`, ... if taken) before writing anything; write this handoff to `HANDOFF_<today>.md` (same suffixing rule); then copy that file over `HANDOFF.md` so it mirrors the newest save. Never overwrite or delete an existing `HANDOFF_*.md`.
+Save it the never-overwrite way: get today's date via `date +%F`; if `HANDOFF.md` exists in the working directory (or `$ARGUMENTS` path) and its content doesn't already match an existing `HANDOFF_*.md` (i.e. it was never archived), copy it to `HANDOFF_<today>.md` (suffixed `_2`, `_3`, ... if taken) before writing anything; write this handoff to `HANDOFF_<today>.md` (same suffixing rule); then copy that file over `HANDOFF.md` so it mirrors the newest save. Never overwrite or delete an existing `HANDOFF_*.md`.

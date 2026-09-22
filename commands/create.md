@@ -142,7 +142,7 @@ Example:
 
 Determine today's date with `date +%F` (YYYY-MM-DD). Use the working directory, or the path in `$ARGUMENTS` if given, as the base directory for all of the below.
 
-1. **Rescue an existing `HANDOFF.md`.** If `HANDOFF.md` already exists in the base directory, copy it to `HANDOFF_<today>.md` first (append `_2`, `_3`, ... if a file with that name already exists), so no prior handoff is ever lost.
+1. **Rescue an un-archived `HANDOFF.md`.** If `HANDOFF.md` already exists in the base directory *and* its content does not already match any existing `HANDOFF_*.md` file (i.e. it is a rolling pointer that was never itself archived — this is the normal case only the very first time this runs in a directory), copy it to `HANDOFF_<today>.md` first (append `_2`, `_3`, ... if a file with that name already exists), so no prior handoff is ever lost. If its content already matches an existing dated file, skip this step — it's already archived.
 2. **Write the new handoff.** Save the document you just wrote to `HANDOFF_<today>.md` (append `_2`, `_3`, ... if today's file — or `_N` file — is already taken; never overwrite an existing dated file).
 3. **Update the pointer.** Copy that new dated file over `HANDOFF.md`, so `HANDOFF.md` always mirrors the newest handoff and stays the single entry point for the `handoff` skill and `/handoff:resume`.
 
